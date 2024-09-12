@@ -1,0 +1,15 @@
+{
+  "name": "packages",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev-marketing": "cd marketing/ && npm start",
+    "dev-container": "cd container/ && npm start",
+    "dev": "concurrently \"npm run dev-marketing \" \"npm run dev-container \"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
