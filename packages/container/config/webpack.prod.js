@@ -10,6 +10,10 @@ const prodConfig = {
     mode: 'production', // js minified, optimized
     output: {
         filename: '[name].[contenthash].js',
+        // HTMLWebpackPlugin will prepend the files with this path
+        // this matches the path we have in S3
+        // e.g. /container/latest/main.1234.js
+        publicPath: '/container/latest/'
     },
     plugins: [
         new ModuleFederationPlugin({
