@@ -5,7 +5,7 @@ const packageJson = require('../package.json')
 
 const domain = process.env.PRODUCTION_DOMAIN
 
-// test change
+// test change 2
 const prodConfig = {
     mode: 'production', // js minified, optimized
     output: {
