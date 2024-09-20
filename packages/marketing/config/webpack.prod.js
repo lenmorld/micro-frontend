@@ -3,12 +3,14 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const commonConfig = require('./webpack.common')
 const packageJson = require('../package.json')
 
-const domain = process.env.PRODUCTION_DOMAIN
-
 const prodConfig = {
     mode: 'production', // js minified, optimized
     output: {
         filename: '[name].[contenthash].js',
+        // prepend URLs inside remoteEntry with this path
+        // this matches the path we have in S3
+        // e.g. /marketing/latest/main.1234.js
+        publicPath: '/marketing/latest/'
     },
     plugins: [
         new ModuleFederationPlugin({
